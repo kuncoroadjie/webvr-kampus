@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profil UNP Kediri</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    <!-- a-sky dengan gambar awal -->
+      <a-sky id="sky" src="./img/kampus1.jpg"></a-sky>
+      
+      <a-text id="campusName" align="center" color="red" value="Universitas Nusantara PGRI Kediri" width="6" position="0 3 -3" scale="1.5 1.5 1.5" ></a-text>
+      <a-text id="location" align="center" color="red" value="Jl. K.H. Achmad Dahlan 76, Kediri, Jawa Timur 64112" width="5" position="0 2.5 -3"></a-text>
+      
+      <!-- Tombol Kampus 1 -->
+      <a-entity
+        geometry="primitive: box; width: 1.5; height: 0.5; depth: 0.1"
+        material="color: #3474EB"
+        position="-3.5 0.5 -3.5"
+        onclick="ubahWarnaSky('./img/kampus1.jpg', 'Kampus 1', 'Jl. Ahmad Dahlan No.76, Mojoroto, Kec. Mojoroto, Kota Kediri, Jawa Timur 64112', '0 0 0')"
+        cursor-listener
+      >
+        <a-entity
+          text="value: Kampus 1; color: white; align: center"
+          position="0 0 0.05"
+          scale="4 4 4"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Tombol Kampus 2 -->
+      <a-entity
+        geometry="primitive: box; width: 1.5; height: 0.5; depth: 0.1"
+        material="color: #EB344C"
+        position="-1.75 0.5 -3.5"
+        onclick="ubahWarnaSky('./img/kampus2.jpg', 'Kampus 2', 'Mojoroto Gg. 1 No. 6, Kediri', '0 0 0')"
+        cursor-listener
+      >
+        <a-entity
+          text="value: Kampus 2; color: white; align: center"
+          position="0 0 0.05"
+          scale="4 4 4"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Tombol Kampus 3 -->
+      <a-entity
+        geometry="primitive: box; width: 1.5; height: 0.5; depth: 0.1"
+        material="color: #2CC947"
+        position="0 0.5 -3.5"
+        onclick="ubahWarnaSky('./img/kampus3.jpg', 'Kampus 3', 'Jl. K.H. Achmad Dahlan 25, Kediri', '0 180 0')"
+        cursor-listener
+      >
+        <a-entity
+          text="value: Kampus 3; color: white; align: center"
+          position="0 0 0.05"
+          scale="4 4 4"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Tombol Kampus 4 -->
+      <a-entity
+        geometry="primitive: box; width: 1.5; height: 0.5; depth: 0.1"
+        material="color: #C9C72E"
+        position="1.75 0.5 -3.5"
+        onclick="ubahWarnaSky('./img/kampus4.jpg', 'Kampus 4', 'Jalan Lintasan Mojoroto, Kediri', '0 180 0')"
+        cursor-listener
+      >
+        <a-entity
+          text="value: Kampus 4; color: white; align: center"
+          position="0 0 0.05"
+          scale="4 4 4"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Tombol Kampus 5 -->
+      <a-entity
+        geometry="primitive: box; width: 1.5; height: 0.5; depth: 0.1"
+        material="color: #C92EBD"
+        position="3.5 0.5 -3.5"
+        onclick="ubahWarnaSky('./img/kampus5.jpg', 'Kampus 5', 'Jl. Mdr, Kasian, Manyaran, Kec. Banyakan', '0 0 0')"
+        cursor-listener
+      >
+        <a-entity
+          text="value: Kampus 5; color: white; align: center"
+          position="0 0 0.05"
+          scale="4 4 4"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Pembuat -->
+      <a-text font="mozillavr" color="yellow" align="center" value="Pembuat :" width="6" position="0 2.25 4" rotation="0 180 0"></a-text>
+      <a-text font="mozillavr" align="center" value="Ridho Kuncoro Adji Wibowo 2013020212" width="6" position="0 1.75 4" rotation="0 180 0"></a-text>
+      <a-text font="mozillavr" align="center" value="Muhammad Yusuf Efendi 2013020052" width="6" position="0 1.25 4" rotation="0 180 0"></a-text>
+      
+      <a-camera><a-cursor scale="2 2 2" color="#16e0fa"></a-cursor></a-camera>
+
+      <!-- JS untuk mengubah gambar a-sky dan teks -->
+      <script>
+        function ubahWarnaSky(gambar, kampus, lokasi, rotasi) {
+          var sky = document.getElementById('sky');
+          sky.setAttribute('src', gambar);
+          sky.setAttribute('rotation', rotasi);
+          
+          var campusName = document.getElementById('campusName');
+          campusName.setAttribute('value', kampus);
+          
+          var location = document.getElementById('location');
+          location.setAttribute('value', lokasi);
+          
+        }
+      </script>
+    </a-scene>
+  </body>
+</html>
